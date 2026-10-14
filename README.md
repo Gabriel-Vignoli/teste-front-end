@@ -116,6 +116,9 @@ src/
 │   ├── ProductCard/
 │   │   ├── ProductCard.scss
 │   │   └── ProductCard.tsx
+│   ├── ProductModal/
+│   │   ├── ProductModal.scss
+│   │   └── ProductModal.tsx
 │   └── RelatedProducts/
 │       ├── RelatedProducts.scss
 │       └── RelatedProducts.tsx
@@ -149,6 +152,11 @@ Exemplo de uso:
 ### ProductCard
 
 Card individual de produto. Recebe um objeto `Product` com nome, descrição, imagem, preço e preço antigo (opcional).
+
+### ProductModal
+
+Modal com as principais informações do produto selecionado.
+Fecha ao clicar fora, no botão X ou pressionando `Esc`.
 
 ### Newsletter
 
