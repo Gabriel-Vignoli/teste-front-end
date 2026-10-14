@@ -1,0 +1,92 @@
+@use "../../styles/variables" as *;
+
+.footer {
+  background-color: $color-gray-light;
+
+  &__main {
+    display: flex;
+    gap: 64px;
+    padding-block: 56px;
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    max-width: 280px;
+    padding-right: 64px;
+    border-right: 1px solid $color-border;
+  }
+
+  &__logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 16px;
+  }
+
+  &__description {
+    margin: 0 0 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: $color-gray-dark;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 16px;
+
+    a {
+      color: $color-gray-dark;
+      transition: color 0.2s;
+
+      &:hover {
+        color: $color-blue;
+      }
+    }
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex: 1;
+    gap: 32px;
+  }
+
+  &__column-title {
+    margin: 0 0 20px;
+    font-size: 15px;
+    font-weight: 700;
+    color: $color-gray-dark;
+  }
+
+  &__links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: $color-gray-medium;
+    text-decoration: none;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &__bottom {
+    padding-block: 16px;
+    text-align: center;
+    font-size: 13px;
+    color: $color-gray-medium;
+    background-color: darken($color-gray-light, 4%);
+
+    p {
+      margin: 0;
+    }
+  }
+}
