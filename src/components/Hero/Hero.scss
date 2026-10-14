@@ -1,0 +1,65 @@
+@use "../../styles/variables" as *;
+
+$hero-yellow: $color-yellow;
+
+.hero {
+  display: flex;
+  align-items: center;
+  height: 420px;
+  background-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url("/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 48px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.15;
+    color: $color-white;
+  }
+
+  &__subtitle {
+    margin: 16px 0 0;
+    font-size: 28px;
+    font-weight: 400;
+    color: $color-white;
+
+    strong {
+      font-weight: 700;
+      color: $hero-yellow;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 600;
+    color: $color-gray-dark;
+    text-decoration: none;
+    background: $hero-yellow;
+    border-radius: 4px;
+    transition: filter 0.2s;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
+  }
+}
