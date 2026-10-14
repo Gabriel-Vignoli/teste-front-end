@@ -10,6 +10,7 @@ export interface Product {
 
 interface ProductCardProps {
   product: Product;
+  onClick?: (product: Product) => void;
 }
 
 const INSTALLMENTS = 2;
@@ -20,11 +21,26 @@ const formatCurrency = (value: number) =>
     currency: "BRL",
   }).format(value);
 
-export default function ProductCard({ product }: ProductCardProps) {
+export default function ProductCard({ product, onClick }: ProductCardProps) {
   const { productName, descriptionShort, photo, price, oldPrice } = product;
 
+  const handleClick = () => onClick?.(product);
+
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      onClick?.(product);
+    }
+  };
+
   return (
-    <article className="product-card">
+    <article
+      className="product-card"
+      onClick={handleClick}
+      onKeyDown={handleKeyDown}
+      role="button"
+      tabIndex={0}
+    >
       <div className="product-card__image-wrapper">
         <img src={photo} alt={productName} className="product-card__image" />
       </div>

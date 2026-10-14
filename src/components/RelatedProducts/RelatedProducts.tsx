@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ProductCard, { type Product } from "../ProductCard/ProductCard";
+import ProductModal from "../ProductModal/ProductModal";
 import "./RelatedProducts.scss";
 
 const API_URL =
@@ -52,10 +53,11 @@ export default function RelatedProducts({
 }: RelatedProductsProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [status, setStatus] = useState<"loading" | "success" | "error">(
-    "loading",
+    "loading"
   );
   const [activeTab, setActiveTab] = useState(tabs[0].value);
   const [index, setIndex] = useState(0);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -109,7 +111,11 @@ export default function RelatedProducts({
         {variant === "tabs" && (
           <ul className="related__tabs" role="tablist">
             {tabs.map(({ label, value }) => (
-              <li key={value} className="related__tab-item" role="presentation">
+              <li
+                key={value}
+                className="related__tab-item"
+                role="presentation"
+              >
                 <button
                   type="button"
                   role="tab"
@@ -163,7 +169,10 @@ export default function RelatedProducts({
               >
                 {products.map((product) => (
                   <li key={product.productName} className="related__slide">
-                    <ProductCard product={product} />
+                    <ProductCard
+                      product={product}
+                      onClick={setSelectedProduct}
+                    />
                   </li>
                 ))}
               </ul>
@@ -181,6 +190,12 @@ export default function RelatedProducts({
           </div>
         )}
       </div>
+
+      <ProductModal
+        key={selectedProduct?.productName ?? "empty"}
+        product={selectedProduct}
+        onClose={() => setSelectedProduct(null)}
+      />
     </section>
   );
 }
