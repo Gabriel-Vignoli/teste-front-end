@@ -91,7 +91,8 @@ Para pré-visualizar a build de produção:
 
 ## 📁 Estrutura do projeto
 
-   public/
+```text
+public/
 ├── *.svg          # Ícones e logos (favicon, Logo, instagram, facebook, linkedin, etc.)
 └── *.png          # Imagens das seções (parceiros, categorias, backgrounds, etc.)
 
@@ -123,6 +124,9 @@ src/
 ├── App.tsx
 ├── main.tsx
 └── index.scss
+```
+
+> **Observação:** todos os assets (ícones SVG e imagens PNG) ficam na pasta `public/` na raiz do projeto e são referenciados diretamente via caminhos absolutos (ex: `/Logo.svg`, `/parceiros.png`). Não há pasta `src/assets`.
 
 ---
 
