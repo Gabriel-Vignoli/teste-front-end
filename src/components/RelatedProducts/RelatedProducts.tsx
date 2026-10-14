@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import ProductCard, { type Product } from "../ProductCard/ProductCard";
 import "./RelatedProducts.scss";
 
-const API_URL = "/api/teste-front-end/junior/tecnologia/lista-produtos/produtos.json";
-
+const API_URL =
+  "/api/teste-front-end/junior/tecnologia/lista-produtos/produtos.json";
 
 const VISIBLE_CARDS = 4;
 
@@ -19,6 +19,10 @@ const tabs = [
 interface ProductsResponse {
   success: boolean;
   products: Product[];
+}
+
+interface RelatedProductsProps {
+  variant?: "tabs" | "see-all";
 }
 
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
@@ -43,10 +47,12 @@ function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export default function RelatedProducts() {
+export default function RelatedProducts({
+  variant = "tabs",
+}: RelatedProductsProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [status, setStatus] = useState<"loading" | "success" | "error">(
-    "loading"
+    "loading",
   );
   const [activeTab, setActiveTab] = useState(tabs[0].value);
   const [index, setIndex] = useState(0);
@@ -100,23 +106,31 @@ export default function RelatedProducts() {
           Produtos relacionados
         </h2>
 
-        <ul className="related__tabs" role="tablist">
-          {tabs.map(({ label, value }) => (
-            <li key={value} className="related__tab-item" role="presentation">
-              <button
-                type="button"
-                role="tab"
-                aria-selected={activeTab === value}
-                className={`related__tab${
-                  activeTab === value ? " related__tab--active" : ""
-                }`}
-                onClick={() => handleTabChange(value)}
-              >
-                {label}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {variant === "tabs" && (
+          <ul className="related__tabs" role="tablist">
+            {tabs.map(({ label, value }) => (
+              <li key={value} className="related__tab-item" role="presentation">
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === value}
+                  className={`related__tab${
+                    activeTab === value ? " related__tab--active" : ""
+                  }`}
+                  onClick={() => handleTabChange(value)}
+                >
+                  {label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+
+        {variant === "see-all" && (
+          <a href="#" className="related__see-all">
+            Ver todos
+          </a>
+        )}
 
         {status === "loading" && (
           <p className="related__status">Carregando produtos...</p>

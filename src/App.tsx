@@ -12,9 +12,12 @@ const App = () => {
       <main>
         <Hero />
         <Categories />
-        <RelatedProducts />
+        <RelatedProducts variant="tabs" />
+        <Partners />
+        <RelatedProducts variant="see-all" />
         <Partners />
         <Brands />
+        <RelatedProducts variant="see-all" />
       </main>
     </>
   );

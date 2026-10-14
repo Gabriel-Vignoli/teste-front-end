@@ -16,7 +16,6 @@ $related-visible: 4;
     text-align: center;
     color: $color-blue;
 
-    // Linhas dos dois lados do título
     &::before,
     &::after {
       content: "";
@@ -34,7 +33,20 @@ $related-visible: 4;
     }
   }
 
-  // ----- Abas -----
+  &__see-all {
+    display: block;
+    margin: 0 0 24px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    color: $color-gray-dark;
+    text-decoration: underline;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
   &__tabs {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -72,7 +84,6 @@ $related-visible: 4;
     }
   }
 
-  // ----- Estados de carregamento / erro -----
   &__status {
     margin: 48px 0;
     font-size: 14px;
@@ -84,14 +95,12 @@ $related-visible: 4;
     }
   }
 
-  // ----- Carrossel -----
   &__carousel {
     position: relative;
     padding-inline: 32px;
   }
 
   &__viewport {
-    // Espaço extra para a sombra dos cards não ser cortada
     padding: 8px 8px 24px;
     margin: -8px -8px -24px;
     overflow: hidden;
