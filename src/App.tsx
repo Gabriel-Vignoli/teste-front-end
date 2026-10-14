@@ -1,3 +1,4 @@
+import Brands from "./components/Brands/Brands";
 import Categories from "./components/Categories/Categories";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
@@ -13,6 +14,7 @@ const App = () => {
         <Categories />
         <RelatedProducts />
         <Partners />
+        <Brands />
       </main>
     </>
   );

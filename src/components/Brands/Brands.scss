@@ -1,0 +1,54 @@
+@use "../../styles/variables" as *;
+
+.brands {
+  padding-block: 60px 80px;
+
+  &__title {
+    margin: 0 0 48px;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: $color-blue;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 200px;
+    aspect-ratio: 1 / 1;
+    padding: 0;
+    background: $color-white;
+    border: 1px solid $color-border;
+    border-radius: 50%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__logo {
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+  }
+}
