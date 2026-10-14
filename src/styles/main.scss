@@ -6,6 +6,31 @@
 
 body {
   margin: 0;
+  font-family: $font-family;
   background: $color-white;
   color: $color-gray-dark;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding-inline: 48px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
 }
