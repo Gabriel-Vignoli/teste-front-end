@@ -91,27 +91,38 @@ Para pré-visualizar a build de produção:
 
 ## 📁 Estrutura do projeto
 
-    src/
-    ├── assets/                # Imagens e ícones internos
-    ├── components/
-    │   ├── Brands/            # Seção "Navegue por marcas"
-    │   ├── Footer/            # Rodapé
-    │   ├── Newsletter/        # Seção de newsletter
-    │   ├── Partners/          # Seção "Parceiros"
-    │   ├── ProductCard/       # Card individual de produto
-    │   └── RelatedProducts/   # Vitrine de produtos relacionados (com variantes)
-    ├── styles/
-    │   └── _variables.scss    # Variáveis globais (cores, fontes, breakpoints)
-    ├── App.tsx
-    ├── main.tsx
-    └── index.scss
+   public/
+├── *.svg          # Ícones e logos (favicon, Logo, instagram, facebook, linkedin, etc.)
+└── *.png          # Imagens das seções (parceiros, categorias, backgrounds, etc.)
 
-    public/
-    ├── favicon.svg
-    ├── Logo.svg
-    ├── instagram.svg
-    ├── facebook.svg
-    └── linkedin.svg
+src/
+├── components/
+│   ├── Brands/
+│   │   ├── Brands.scss
+│   │   └── Brands.tsx
+│   ├── Categories/
+│   │   ├── Categories.scss
+│   │   └── Categories.tsx
+│   ├── Footer/
+│   │   ├── Footer.scss
+│   │   └── Footer.tsx
+│   ├── Newsletter/
+│   │   ├── Newsletter.scss
+│   │   └── Newsletter.tsx
+│   ├── Partners/
+│   │   ├── Partners.scss
+│   │   └── Partners.tsx
+│   ├── ProductCard/
+│   │   ├── ProductCard.scss
+│   │   └── ProductCard.tsx
+│   └── RelatedProducts/
+│       ├── RelatedProducts.scss
+│       └── RelatedProducts.tsx
+├── styles/
+│   └── _variables.scss
+├── App.tsx
+├── main.tsx
+└── index.scss
 
 ---
 
