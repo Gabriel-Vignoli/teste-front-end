@@ -31,7 +31,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina:
 ### 1. Clone o repositório
 
     git clone https://github.com/Gabriel-Vignoli/teste-front-end.git
-    cd seu-repositorio
+    cd teste-front-end
 
 ### 2. Instale as dependências
 
